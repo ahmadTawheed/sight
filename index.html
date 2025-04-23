@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sight</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" href="./logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .active-language {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 dark:bg-gray-900" dir="rtl">
+    <header class="bg-blue-500 dark:bg-blue-700 text-white py-4 text-center rounded-b-md shadow-md">
+        <div class="flex justify-center p-2">
+            <button id="ar-btn" class="text-white hover:text-gray-200 px-2 py-1 rounded focus:outline-none active-language">العربية</button>
+            <button id="en-btn" class="text-white hover:text-gray-200 px-2 py-1 rounded focus:outline-none">English</button>
+        </div>
+        <h1 class="text-2xl font-semibold" id="main-title">معرض أعمال البوربوينت</h1>
+        <p class="text-lg p-5" id="main-description">مجموعة من أفضل عروض البوربوينت التي قمت بإنشائها</p>
+        <div class="social-links mt-4 flex justify-center gap-4">
+            <a href="https://www.youtube.com/@sightat" target="_blank" class="text-white hover:text-gray-200" aria-label="YouTube">
+                <i class="fab fa-youtube fa-2x"></i>
+            </a>
+            <a href="https://www.facebook.com/share/16M1NKkPzN/" target="_blank" class="text-white hover:text-gray-200" aria-label="Facebook">
+                <i class="fab fa-facebook fa-2x"></i>
+            </a>
+            <a href="https://www.tiktok.com/@sightat?_t=ZS-8vl8LTTAIm0&_r=1" target="_blank" class="text-white hover:text-gray-200" aria-label="TikTok">
+                <i class="fab fa-tiktok fa-2x"></i>
+            </a>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-8 p-4">
+        <section id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </section>
+        <section class="mt-8 text-center">
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdmYWOukTnxuiTtY6bTalfZFDTzunI_KyYTf85A21U35xs-0w/viewform?usp=dialog" target="_blank" class="bg-green-500 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300 inline-flex items-center">
+                <i class="fas fa-graduation-cap ml-2 p-2"></i>
+                <span id="course-button-text">  اشترك في دورة صناعة البوربوينت الاحترافية     </span>
+            </a>
+        </section>
+    </main>
+
+    <footer class="bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 py-4 text-center mt-8 rounded-t-md shadow-md">
+        <p id="footer-text">&copy; 2024 معرض أعمال البوربوينت. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            // خيارات إضافية للتخصيص
+            once: true, // يمنع تكرار الحركة عند التمرير المتكرر
+            duration: 600, // المدة الزمنية للحركة (بالمللي ثانية)
+            easing: 'ease-out' // نوع التأثير
+        });
+
+        const projectsContainer = document.getElementById('projects-container');
+
+        const projectsData = [
+            {
+                title: {
+                    ar: 'عرض تقديمي عن استخلاص متبقيات المبيدات',
+                    en: 'Presentation on Pesticide Residue Extraction'
+                },
+                description: {
+                    ar: 'عرض تقديمي يوضح طرق وتقنيات الكشف عن آثار المبيدات المتبقية في المنتجات الزراعية والبيئية.',
+                    en: 'A presentation illustrating methods and techniques for detecting residual pesticides in agricultural and environmental products.'
+                },
+                imageUrl: './img/img1.jpg',
+                detailsUrl: 'https://drive.google.com/file/d/1MubDsoF_U027iqRX5n3lYm1kYv4dT0Zx/view?usp=drive_link'
+            },
+            {
+                title: {
+                    ar: 'عرض تقديمي عن التغيرات المناخية',
+                    en: 'Presentation on climate change'
+                },
+                description: {
+                    ar: 'عرض تقديمي يشرح أسباب وتأثيرات التغيرات المناخية الحالية والمستقبلية، مع التركيز على الحلول المقترحة للتخفيف من آثارها والتكيف معها.',
+                    en: 'A presentation explaining the causes and impacts of current and future climate change, with a focus on proposed solutions to mitigate and adapt to its effects.'
+                },
+                imageUrl: './img/img2.png',
+                detailsUrl: 'https://drive.google.com/file/d/1tsOp9prrmR9fiVbSPBSKjmQD8l6pDF9T/view?usp=drive_link'
+            },
+            {
+                title: {
+                    ar: 'عرض تقديمي عن نبات الطماطم',
+                    en: 'Tomato plant presentation'
+                },
+                description: {
+                    ar: 'عرض تقديمي شامل يستعرض جوانب نبات الطماطم من زراعته وأنواعه وفوائده الغذائية وصولًا إلى استخداماته المتنوعة وأهميته الاقتصادية.',
+                    en: 'A comprehensive presentation that explores all aspects of the tomato plant, from its cultivation, types, and nutritional benefits to its diverse uses and economic importance.'
+                },
+                imageUrl: './img/img3.jpg',
+                detailsUrl: 'https://drive.google.com/file/d/1unx43pWOKAGdd_RUaE2MFFNpDzJMuF-y/view?usp=drive_link'
+            },
+             {
+                title: {
+                    ar: 'عرض تقديمي عن برمجة الواجهة الامامية',
+                    en: 'Front-end programming presentation'
+                },
+                description: {
+                    ar: 'عرض تقديمي يوضح أساسيات ومفاهيم برمجة الواجهات الأمامية للمواقع والتطبيقات، مع استعراض لأهم التقنيات والأدوات المستخدمة في تطوير تجربة المستخدم.',
+                    en: 'A presentation that explains the basics and concepts of front-end programming for websites and applications, with an overview of the most important techniques and tools used in developing the user experience.'
+                },
+                imageUrl: './img/img4.jpg',
+                detailsUrl: 'https://drive.google.com/file/d/1wWNe5p1LrpgkIc3AXSDHop607m7H5z0y/view?usp=drive_link'
+            },
+            {
+                title: {
+                    ar: 'عرض تقديمي عن تنقية الملوثات بواسطة النبات',
+                    en: 'Presentation on plant decontamination'
+                },
+                description: {
+                    ar: 'عرض تقديمي يستعرض مفهوم المعالجة النباتية وكيفية استخدام أنواع معينة من النباتات لتنقية التربة والمياه والهواء من الملوثات المختلفة.',
+                    en: 'A presentation that explores the concept of phytoremediation and how certain types of plants can be used to purify soil, water, and air of various pollutants.'
+                },
+                imageUrl: './img/img5.png',
+                detailsUrl: 'https://drive.google.com/file/d/1Dff5zOHxS5IOJc3GOecBXGhMeWOO1Cu1/view?usp=drive_link'
+            },
+            {
+                title: {
+                    ar: 'عرض تقديمي عن الحشرات',
+                    en: 'Presentation on insects'
+                },
+                description: {
+                    ar: 'عرض تقديمي تعريفي بعالم الحشرات المتنوع، يشمل تصنيفها ودورة حياتها وأهميتها البيئية والاقتصادية، بالإضافة إلى تأثيرها على الإنسان.',
+                    en: 'An introductory presentation on the diverse world of insects, including their classification, life cycle, environmental and economic importance, and their impact on humans.'
+                },
+                imageUrl: './img/img6.png',
+                detailsUrl: 'https://drive.google.com/file/d/1CH45TrE8UAu7vbgqQG05ehKr4TyqYYjD/view?usp=drive_link'
+            },
+        ];
+
+        function createProjectCard(project, lang = 'ar') {
+            const card = document.createElement('div');
+            card.className = 'bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-transform transform hover:scale-105';
+            card.setAttribute('data-aos', 'fade-up');
+            card.setAttribute('data-aos-duration', '500');
+            card.classList.add('transition-all');
+
+            const imageContainer = document.createElement('div');
+            imageContainer.className = 'relative';
+
+            const image = document.createElement('img');
+            image.src = project.imageUrl;
+            image.alt = project.title[lang];
+            image.className = 'w-full h-48 object-cover';
+
+            const overlay = document.createElement('div');
+            overlay.className = 'absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center';
+            overlay.classList.add('opacity-0');
+            overlay.classList.add('transition-opacity');
+
+            const title = document.createElement('h3');
+            title.className = 'text-xl font-semibold text-white';
+            title.textContent = project.title[lang];
+
+            overlay.appendChild(title);
+            imageContainer.appendChild(image);
+            imageContainer.appendChild(overlay);
+
+            card.addEventListener('mouseenter', () => {
+                card.classList.add('scale-105');
+                overlay.classList.remove('opacity-0');
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.classList.remove('scale-105');
+                overlay.classList.add('opacity-0');
+            });
+
+            const content = document.createElement('div');
+            content.className = 'p-6';
+
+            const description = document.createElement('p');
+            description.className = 'text-gray-700 dark:text-gray-300 mb-4';
+            description.textContent = project.description[lang];
+
+            const detailsLink = document.createElement('a');
+            detailsLink.href = project.detailsUrl;
+            detailsLink.className = 'inline-flex items-center px-4 py-2 bg-blue-500 dark:bg-blue-600 text-white rounded-md hover:bg-blue-600 dark:hover:bg-blue-700 transition-colors duration-300 view-details-link';
+            detailsLink.textContent = lang === 'ar' ? 'شاهد التفاصيل' : 'View Details';
+
+            const linkIcon = document.createElement('svg');
+            linkIcon.xmlns = 'http://www.w3.org/2000/svg';
+            linkIcon.viewBox = '0 0 20 20';
+            linkIcon.fill = 'currentColor';
+            linkIcon.className = 'w-5 h-5 mr-2';
+            const path1 = document.createElement('path');
+            path1.d = 'M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z';
+            const path2 = document.createElement('path');
+            path2.setAttribute('fill-rule', 'evenodd');
+            path2.d = 'M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 100-12 6 6 0 000 12z';
+            path2.setAttribute('clip-rule', 'evenodd');
+            linkIcon.appendChild(path1);
+            linkIcon.appendChild(path2);
+            detailsLink.appendChild(linkIcon);
+
+            content.appendChild(description);
+            content.appendChild(detailsLink);
+
+            card.appendChild(imageContainer);
+            card.appendChild(content);
+
+            return card;
+        }
+
+        let currentLanguage = 'ar';
+        const arBtn = document.getElementById('ar-btn');
+        const enBtn = document.getElementById('en-btn');
+        const mainTitle = document.getElementById('main-title');
+        const mainDescription = document.getElementById('main-description');
+        const footerText = document.getElementById('footer-text');
+        const viewDetailsLinks = document.querySelectorAll('.view-details-link');
+        const courseButtonText = document.getElementById('course-button-text');
+
+
+        function changeLanguage(lang) {
+            currentLanguage = lang;
+
+            if (lang === 'ar') {
+                document.documentElement.setAttribute('lang', 'ar');
+                document.body.setAttribute('dir', 'rtl');
+                arBtn.classList.add('active-language');
+                enBtn.classList.remove('active-language');
+                mainTitle.textContent = 'معرض أعمال البوربوينت';
+                mainDescription.textContent = 'مجموعة من أفضل عروض البوربوينت التي قمت بإنشائها';
+                footerText.textContent = '© 2024 معرض أعمال البوربوينت. جميع الحقوق محفوظة.';
+                viewDetailsLinks.forEach(link => {
+                    link.textContent = 'شاهد التفاصيل';
+                });
+                courseButtonText.textContent = 'اشترك في دورة صناعة البوربوينت الاحترافية';
+
+            } else {
+                document.documentElement.setAttribute('lang', 'en');
+                document.body.setAttribute('dir', 'ltr');
+                enBtn.classList.add('active-language');
+                arBtn.classList.remove('active-language');
+                mainTitle.textContent = 'PowerPoint Portfolio';
+                mainDescription.textContent = 'A collection of my best PowerPoint presentations';
+                footerText.textContent = '© 2024 PowerPoint Portfolio. All rights reserved.';
+                viewDetailsLinks.forEach(link => {
+                    link.textContent = 'View Details';
+                });
+                courseButtonText.textContent = '  Enroll in the Professional PowerPoint Course ';
+            }
+
+            projectsContainer.innerHTML = '';
+            projectsData.forEach(project => {
+                const projectCard = createProjectCard(project, lang);
+                projectsContainer.appendChild(projectCard);
+            });
+             AOS.refresh();
+        }
+
+        arBtn.addEventListener('click', () => {
+            changeLanguage('ar');
+        });
+
+        enBtn.addEventListener('click', () => {
+            changeLanguage('en');
+        });
+
+        changeLanguage(currentLanguage);
+    </script>
+</body>
+</html>
